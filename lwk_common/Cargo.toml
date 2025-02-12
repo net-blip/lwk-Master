@@ -1,0 +1,19 @@
+[package]
+name = "lwk_common"
+version = "0.8.0"
+edition = "2021"
+description = "Liquid Wallet Kit - Common utilities"
+license = "MIT OR BSD-2-Clause"
+documentation = "https://docs.rs/lwk_common"
+
+[dependencies]
+base64 = "0.21.4"
+elements = { version = "0.25.0", features = ["base64"] }
+elements-miniscript = "0.4"
+qr_code = { version = "2.0.0", features = ["bmp"] }
+rand = "0.8"
+thiserror = "1.0.48"
+# avoid deps to the workspace
+
+[target.wasm32-unknown-unknown.dependencies]
+getrandom = { version = "0.2", features = ["js"] }
